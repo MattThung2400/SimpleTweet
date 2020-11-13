@@ -25,6 +25,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:ellipsize="end"
         tools:text="rPandev1234" />
 
     <TextView
@@ -47,10 +48,10 @@
         android:layout_alignBottom="@+id/tvDisplayName"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="107dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="-1dp"
+        android:layout_marginBottom="0dp"
         tools:text="25m" />
 
     <TextView
@@ -58,8 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
         android:layout_toStartOf="@+id/tvRelTime"
         android:layout_toEndOf="@+id/tvDisplayName"
+        android:ellipsize="end"
         android:textColor="#6A070707"
         tools:text="MyUserName" />
 </RelativeLayout>

@@ -36,6 +36,12 @@ android {
     }
 }
 
+ext {
+    appCompatVersion = '1.0.0'
+    designSupportVersion = '1.0.0'
+    recyclerViewVersion = '1.0.0'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.codepath.libraries:android-oauth-handler:2.2.0'
@@ -53,4 +59,15 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
     implementation 'com.google.android.material:material:1.0.0-rc01'
+    // For Design Support Library
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
+    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+    // For Parceler library
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+    // For Floating Action Bar
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.android.support:design:28.0.0'
 }

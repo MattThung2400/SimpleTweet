@@ -8,6 +8,10 @@
         -->
         <item name="colorPrimary">#3C4DA8</item>
         <item name="titleTextColor">@color/primary_text</item>
+        <item name="colorControlNormal">#5A98F6</item>
+        <item name="colorControlActivated">#3C4DA8</item>
+        <item name="colorControlHighlight">#7a95b8</item>
+        <item name="colorError">#fa0505</item>
     </style>
 
     <!-- Application theme. -->
@@ -16,4 +20,14 @@
     </style>
 
     <color name="primary_text">#FFFFFF</color>
+
+    <!-- Custom TextInputLayout -->
+    <style name="counterText">
+        <item name="android:textColor">#aa5353cc</item>
+    </style>
+
+    <style name="counterOverride">
+        <item name="android:textColor">#ff0000</item>
+    </style>
+
 </resources>

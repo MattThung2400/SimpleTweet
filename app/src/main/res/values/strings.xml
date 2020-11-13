@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SimpleTweet</string>
-    <string name="login_label">Log in</string>
+    <string name="app_name">Tweeter</string>
+    <string name="login_label">Log in (using Twitter)</string>
     <string name="intent_scheme">oauth</string>
     <string name="intent_host">cprest</string>
+    <string name="tweet">Tweet</string>
+    <string name="tweet_too_long">"Sorry, your tweet is too long to post."</string>
+    <string name="tweet_empty">You can not post an empty tweet.</string>
+    <string name="type_tweet">Enter a tweet...</string>
 
 </resources>
