@@ -45,16 +45,16 @@ The fix for this was rather simple, I just had to go into the project settings a
 Moreover, I ran into issues inflating my custom menu items since I modified my appBar within the timeline activity. Adding the following code
 to track the toolbar element of the layout fixed my issue of the menu buttons not showing:
 
-(In the TimelineActivity class at the top of the body, where the other data members are declared)
-Toolbar toolbar; 
+>(In the TimelineActivity class at the top of the body, where the other data members are declared)
+>Toolbar toolbar; 
 
-(In the onCreate Method)
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.showOverflowMenu();
+>(In the onCreate Method)
+>        toolbar = (Toolbar) findViewById(R.id.toolbar);
+>        setSupportActionBar(toolbar);
+>        toolbar.showOverflowMenu();
 
 And import:
-import androidx.appcompat.widget.Toolbar;
+>import androidx.appcompat.widget.Toolbar;
 
 I also ran into an issue with my emulator where the system UI was no longer displaying. I could not scroll down to disable/enable
 wifi and data connections. To fix this issue, I had to go into the android virtual device manager and cold boot the device.
@@ -65,23 +65,23 @@ event log (which resides in the bottom right corner by default).
 I had another issue where my floating action bar would hide when scrolling down, but never re-appear when scrolling up.
 To fix this I had to change the code of the 'onNestedScroll(...)' method, changing:
 
-child.hide();  
+>child.hide();  
 
 to:
 
-child.hide(new FloatingActionButton.OnVisibilityChangedListener() {
-        @Override
-        public void onHidden(FloatingActionButton fab) {
-            super.onHidden(fab);
-            fab.setVisibility(View.INVISIBLE);
-        }
-    });
+>child.hide(new FloatingActionButton.OnVisibilityChangedListener() {
+>        @Override
+>        public void onHidden(FloatingActionButton fab) {
+>            super.onHidden(fab);
+>            fab.setVisibility(View.INVISIBLE);
+>        }
+>    });
 
 I encountered an issue with writing to a file using the CodePath tutorials provided. I had to change my file access method to: MODE_PRIVATE
 as my program would crash upon opening the composeActivity if I gave the default MODE_WORLD_WRITABLE. Logcat through a "file could not be found"
 error otherwise. I also had to call .getBytes() in my write method in order to be able to use the private mode:
 
-fos.write(etCompose.getText().toString().getBytes());
+>fos.write(etCompose.getText().toString().getBytes());
 
 # Project 2 - *SimpleTweet* (Part 1)
 
