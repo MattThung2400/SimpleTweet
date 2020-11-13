@@ -127,26 +127,31 @@ public class ComposeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(android.R.drawable.ic_dialog_alert);
-        builder.setTitle("Closing Activity");
-        builder.setMessage("Do you want to save your tweet as a draft for future usage?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                SaveDraft();
-                finish();
-            }
+        if (etCompose.getText().toString().length() > 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.setTitle("Closing Activity");
+            builder.setMessage("Do you want to save your tweet as a draft for future usage?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SaveDraft();
+                    finish();
+                }
 
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                ClearDraft();
-                finish();
-            }
-        });
-        builder.show();
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    ClearDraft();
+                    finish();
+                }
+            });
+            builder.show();
+        }
+        else {
+            finish();
+        }
     }
 
     public void SaveDraft() {
